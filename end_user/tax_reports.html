@@ -7,15 +7,26 @@
 <head>
 
         <meta charset="utf-8" />
-        <title>Tasks & Deadlines - Tax Firms</title>
+        <title>Tax Reports - User</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc."/>
         <meta name="author" content="Zoyothemes"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="../assets/favicon_tax.png">
 
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="../assets/user_favi.png">
+<style>
+     .section-box {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.06);
+      margin-bottom: 30px;
+    }
+    .table td, .table th {
+      vertical-align: middle;
+    }
+</style>
         <!-- App css -->
         <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
 
@@ -226,6 +237,7 @@
 
                 <!--- Sidemenu -->
                 <div id="sidebar-menu">
+
                     <div class="logo-box">
                         <a class='logo logo-light' href='index.html'>
                             <span class="logo-sm">
@@ -244,49 +256,42 @@
                             </span>
                         </a>
                     </div>
-
                     <ul id="side-menu">
 
                         <li class="menu-title">Menu</li>
 
                         <li>
-                            <a  class='tp-link' href='index.html'>
+                            <a  class='tp-link ' href='index.html'>
                                 <i data-feather="home"></i>
                                 <span> Dashboard </span>
                             </a>
                         </li>
-                        <li>
-                            <a href="#clientManagement" data-bs-toggle="collapse">
-                                <i data-feather="users"></i>
-                                <span> Clients Management </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="clientManagement">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a class='tp-link' href='client_add.html'>Add Client</a>
-                                    </li>
-                                    <li>
-                                        <a class='tp-link' href='client_list.html'>Client List</a>
-                                    </li>
-                                
-                                </ul>
-                            </div>
-                        </li>
+                    
 
                         <li>
-                            <a class='tp-link' href='documents.html'>
+                            <a class='tp-link ' href='tax_filing.html'>
                                 <i data-feather="file-text"></i>
-                                <span> Documents </span>
+                                <span> Tax Filing </span>
                             </a>
                         </li>
                         <li>
-                            <a class='tp-link active' href='tax&deadlines.html'>
-                                <i data-feather="pie-chart"></i>
-                                <span> Tasks & Deadlines </span>
+                            <a class='tp-link ' href='ocr_based-detection.html'>
+                                <i data-feather="search"></i>
+                                <span> OCR-based Detection </span>
                             </a>
                         </li>
-
+                        <li>
+                            <a class='tp-link active' href='tax_reports.html'>
+                                <i data-feather="file"></i>
+                                <span> Tax Reports</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class='tp-link' href='elster_submission.html'>
+                                <i data-feather="send"></i>
+                                <span> Elster Submission</span>
+                            </a>
+                        </li>
                         
                 
 
@@ -304,75 +309,7 @@
         <!-- ============================================================== -->
         <!-- Start Page Content here -->
         <!-- ============================================================== -->
-        <div class="modal fade" id="ModalDelete" tabindex="-1" aria-labelledby="deleteClientLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                
-                <div class="modal-header bg-danger text-white">
-                  <h5 class="modal-title" id="deleteClientLabel">Confirm Delete</h5>
-                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-          
-                <div class="modal-body text-center">
-                  <i class="bi bi-exclamation-triangle-fill text-warning" style="font-size: 2rem;"></i>
-                  <p class="mt-3 mb-0">Are you sure you want to delete this task?</p>
-                  <small class="text-muted">This action cannot be undone.</small>
-                </div>
-          
-                <div class="modal-footer justify-content-center">
-                  <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
-          <a href="tax&deadlines.html"> <button type="button" class="btn btn-danger">Delete</button></a>       
-                </div>
-          
-              </div>
-            </div>
-          </div>
-          <div class="modal fade bs-example-modal-center" id="ModalEdit" tabindex="-1" aria-labelledby="editClientLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-              <div class="modal-content">
-          
-                <div class="modal-header">
-                  <h5 class="modal-title" id="editClientLabel">Edit Client Information</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-          
-                <div class="modal-body">
-                    <form class="row g-3" id="editTaskForm">
-                        <div class="col-md-6">
-                          <label for="editTaskTitle" class="form-label">Task Title</label>
-                          <input type="text" class="form-control" id="editTaskTitle" placeholder="Enter task title" required>
-                        </div>
-                      
-                        <div class="col-md-6">
-                          <label for="editTaskDueDate" class="form-label">Due Date</label>
-                          <input type="date" class="form-control" id="editTaskDueDate" required>
-                        </div>
-                      
-                        <div class="col-md-6">
-                          <label for="editComplianceStatus" class="form-label">Compliance</label>
-                          <select class="form-select" id="editComplianceStatus" required>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                          </select>
-                        </div>
-                      
-                        <div class="col-md-12">
-                          <label for="editTaskDescription" class="form-label">Task Description (Optional)</label>
-                          <textarea class="form-control" id="editTaskDescription" rows="3" placeholder="Enter task details..."></textarea>
-                        </div>
-                      </form>
-                      
-                </div>
-          
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                <a href="tax&deadlines.html" type="button" class="btn btn-danger" >Save Changes</button></a>
-                </div>
-          
-              </div>
-            </div>
-          </div>
-          
+
         <div class="content-page">
             <div class="content">
 
@@ -381,74 +318,81 @@
 
                     <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column">
                         <div class="flex-grow-1">
-                            <h4 class="fs-18 fw-semibold m-0">Tasks & Deadlines</h4>
-                          
+                            <h4 class="fs-18 fw-semibold m-0"></h4>
                         </div>
-                     
                     </div>
 
-                    <div class="container mt-2">
-                        <!-- Task Form Card -->
-                        <div class="card mb-4 shadow-sm">
-                          <div class="card-header add_task-box text-white">
-                            <h5 class="mb-0">Add New Task</h5>
-                          </div>
-                          <div class="card-body">
-                            <form id="taskForm">
-                              <div class="row g-3 align-items-end">
-                                <div class="col-md-4">
-                                  <label class="form-label">Task Title</label>
-                                  <input type="text" id="taskTitle" class="form-control" placeholder="e.g. File GST Return" required>
-                                </div>
-                                <div class="col-md-4">
-                                  <label class="form-label">Due Date</label>
-                                  <input type="date" id="taskDue" class="form-control" required>
-                                </div>
-                                <div class="col-md-2">
-                                  <label class="form-label">Compliance?</label>
-                                  <select id="taskCompliance" class="form-select">
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                  </select>
-                                </div>
-                                <div class="col-md-2">
-                                  <button type="submit" class="btn btn-danger w-100">Add Task</button>
-                                </div>
-                              </div>
-                            </form>
-                          </div>
+                    <!-- Start Row -->
+                    <div class="container my-0 ">
+
+                        <h3 class="mb-4">Crypto & International Tax Reports</h3>
+                      
+                        <!-- Upload Reports Section -->
+                        <div class="section-box">
+                          <h5 class="mb-3">Upload Tax Documents</h5>
+                          <input class="form-control mb-3" type="file" id="docUpload" accept=".pdf,.csv,.xlsx,.jpg,.png">
+                          <button class="btn btn-danger">Upload Report</button>
                         </div>
                       
-                        <!-- Task List Table Card -->
-                        <div class="card shadow-sm">
+                        <!-- Add Manual Entry Section -->
+                        <div class="section-box">
+                          <h5 class="mb-3">Add Income Entry Manually</h5>
+                          <form id="incomeForm" class="row g-3">
+                            <div class="col-md-4">
+                              <label class="form-label">Income Source</label>
+                              <select class="form-select" id="incomeSource">
+                                <option selected disabled>Select</option>
+                                <option value="crypto">Crypto</option>
+                                <option value="foreign">International Income</option>
+                              </select>
+                            </div>
+                            <div class="col-md-4">
+                              <label class="form-label">Amount (€)</label>
+                              <input type="number" class="form-control" id="amount" required>
+                            </div>
+                            <div class="col-md-4">
+                              <label class="form-label">Date</label>
+                              <input type="date" class="form-control" id="incomeDate" required>
+                            </div>
+                            <div class="col-12">
+                              <button type="submit" class="btn btn-danger">Add Entry</button>
+                            </div>
+                          </form>
+                        </div>
                       
-                          <div class="card-body">
-                            <table id="taskTable" class="table table-striped table-bordered nowrap" style="width:100%">
-                              <thead class="table-secondary">
+                        <!-- Tax Entries Table -->
+                        <div class="section-box">
+                          <h5 class="mb-3">Income Records</h5>
+                          <div class="table-responsive">
+                            <table class="table table-bordered" id="recordsTable">
+                              <thead class="table-light">
                                 <tr>
                                   <th>#</th>
-                                  <th>Task</th>
-                                  <th>Due Date</th>
-                                  <th>Compliance</th>
-                                  <th>Action</th>
+                                  <th>Type</th>
+                                  <th>Amount (€)</th>
+                                  <th>Date</th>
+                                  <th>Status</th>
                                 </tr>
                               </thead>
-                              <tbody>
-                                
+                              <tbody id="recordsBody">
+                                <tr><td colspan="5" class="text-center text-muted">No entries yet</td></tr>
                               </tbody>
                             </table>
                           </div>
                         </div>
+                      
                       </div>
+                      
+                    
+                    <!-- End Start -->
 
-           
+
+                
 
                 </div> <!-- container-fluid -->
             </div> <!-- content -->
 
-            <!-- Footer Start -->
-       
-            <!-- end Footer -->
+      
 
         </div>
         <!-- ============================================================== -->
@@ -473,67 +417,40 @@
 
     <!-- Widgets Init Js -->
     <script src="../assets/js/pages/projects-dashboard.init.js"></script>
-    
-        <!-- Datatables js -->
-        <script src="../assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-
-        <!-- dataTables.bootstrap5 -->
-        <script src="../assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
-        <script src="../assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-
-        <!-- buttons.colVis -->
-        <script src="../assets/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
-        <script src="../assets/libs/datatables.net-buttons/js/buttons.flash.min.js"></script>
-        <script src="../assets/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
-        <script src="../assets/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
-
-        <!-- buttons.bootstrap5 -->
-        <script src="../assets/libs/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
-
-        <!-- dataTables.keyTable -->
-        <script src="../assets/libs/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-        <script src="../assets/libs/datatables.net-keytable-bs5/js/keyTable.bootstrap5.min.js"></script>
-
-        <!-- dataTable.responsive -->
-        <script src="../assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-        <script src="../assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
-
-        <!-- dataTables.select -->
-        <script src="../assets/libs/datatables.net-select/js/dataTables.select.min.js"></script>
-        <script src="../assets/libs/datatables.net-select-bs5/js/select.bootstrap5.min.js"></script>
-
-        <!-- Datatable Demo App Js -->
-        <script src="../assets/js/pages/datatable.init.js"></script>
-
 
     <!-- App js-->
     <script src="../assets/js/app.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-    
     <script>
-      let taskCount = 1;
-      const taskTable = $('#taskTable').DataTable();
-    
-      document.getElementById('taskForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const title = document.getElementById('taskTitle').value.trim();
-        const due = document.getElementById('taskDue').value;
-        const compliance = document.getElementById('taskCompliance').value;
-    
-        taskTable.row.add([
-          taskCount++,
-          title,
-          due,
-          `<span class="badge bg-${compliance === 'Yes' ? 'primary' : 'secondary'}">${compliance}</span>`,
-          `<button class="btn btn-sm btn-info me-1 editBtn"  data-bs-target="#ModalEdit" data-bs-toggle="modal">Edit</button>
-        <button class="btn btn-sm btn-danger deleteBtn"  data-bs-target="#ModalDelete" data-bs-toggle="modal">Delete</button>`
-        ]).draw(false);
-    
-        this.reset();
-      });
-    </script>
+        const form = document.getElementById('incomeForm');
+        const tableBody = document.getElementById('recordsBody');
+        let counter = 1;
+      
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const source = document.getElementById('incomeSource').value;
+          const amount = document.getElementById('amount').value;
+          const date = document.getElementById('incomeDate').value;
+      
+          if (!source || !amount || !date) return;
+      
+          const row = `
+            <tr>
+              <td>${counter++}</td>
+              <td>${source === 'crypto' ? 'Crypto' : 'International'}</td>
+              <td>€${parseFloat(amount).toFixed(2)}</td>
+              <td>${date}</td>
+              <td><span class="badge bg-success">Pending Review</span></td>
+            </tr>
+          `;
+      
+          if (tableBody.innerHTML.includes('No entries yet')) {
+            tableBody.innerHTML = '';
+          }
+      
+          tableBody.insertAdjacentHTML('beforeend', row);
+          form.reset();
+        });
+      </script>
     </body>
 
 

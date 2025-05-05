@@ -7,14 +7,14 @@
 <head>
 
         <meta charset="utf-8" />
-        <title>Dashboard - Tax Firms</title>
+        <title>Dashboard - User</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc."/>
         <meta name="author" content="Zoyothemes"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="../assets/favicon_tax.png">
+        <link rel="shortcut icon" href="../assets/user_favi.png">
 
         <!-- App css -->
         <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
@@ -255,38 +255,32 @@
                                 <span> Dashboard </span>
                             </a>
                         </li>
-                        <li>
-                            <a href="#clientManagement" data-bs-toggle="collapse">
-                                <i data-feather="users"></i>
-                                <span> Clients Management </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="clientManagement">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a class='tp-link' href='client_add.html'>Add Client</a>
-                                    </li>
-                                    <li>
-                                        <a class='tp-link' href='client_list.html'>Client List</a>
-                                    </li>
-                                
-                                </ul>
-                            </div>
-                        </li>
+                    
 
                         <li>
-                            <a class='tp-link' href='documents.html'>
+                            <a class='tp-link' href='tax_filing.html'>
                                 <i data-feather="file-text"></i>
-                                <span> Documents </span>
+                                <span> Tax Filing </span>
                             </a>
                         </li>
                         <li>
-                            <a class='tp-link' href='tax&deadlines.html'>
-                                <i data-feather="pie-chart"></i>
-                                <span> Tasks & Deadlines </span>
+                            <a class='tp-link' href='ocr_based-detection.html'>
+                                <i data-feather="search"></i>
+                                <span> OCR-based Detection </span>
                             </a>
                         </li>
-
+                        <li>
+                            <a class='tp-link' href='tax_reports.html'>
+                                <i data-feather="file"></i>
+                                <span> Tax Reports</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class='tp-link' href='elster_submission.html'>
+                                <i data-feather="send"></i>
+                                <span> Elster Submission</span>
+                            </a>
+                        </li>
                         
                 
 
@@ -321,14 +315,14 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="row">
-                                <!-- Widget 1: Total Clients -->
+                                <!-- Widget 1: Total Tax Submissions -->
                                 <div class="col-md-6 col-xl-3">
                                     <div class="card overflow-hidden">
                                         <div class="card-body">
                                             <div class="widget-first">
                                                 <div class="d-flex align-items-center mb-1">
                                                     <span class="avatar-md rounded-circle bg-gray d-flex justify-content-center align-items-center me-3">
-                                                        <!-- Swapped SVG (was 2nd position) -->
+                                                        <!-- Swapped SVG (for tax submission) -->
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24">
                                                             <path fill="#287F71" d="M4.979 9.685C2.993 8.891 2 8.494 2 8s.993-.89 2.979-1.685l2.808-1.123C9.773 4.397 10.767 4 12 4s2.227.397 4.213 1.192l2.808 1.123C21.007 7.109 22 7.506 22 8s-.993.89-2.979 1.685l-2.808 1.124C14.227 11.603 13.233 12 12 12s-2.227-.397-4.213-1.191z" />
                                                             <path fill="#287F71" fill-rule="evenodd" d="M2 8c0 .494.993.89 2.979 1.685l2.808 1.124C9.773 11.603 10.767 12 12 12s2.227-.397 4.213-1.191l2.808-1.124C21.007 8.891 22 8.494 22 8s-.993-.89-2.979-1.685l-2.808-1.123C14.227 4.397 13.233 4 12 4s-2.227.397-4.213 1.192L4.98 6.315C2.993 7.109 2 7.506 2 8" clip-rule="evenodd" />
@@ -337,57 +331,57 @@
                                                         </svg>
                                                     </span>
                                                     <div>
-                                                        <p class="mb-2 text-dark fs-15 fw-medium">Total Clients</p>
-                                                        <h3 class="mb-0 fs-22 text-dark me-3">1,024</h3>
+                                                        <p class="mb-2 text-dark fs-15 fw-medium">Total Tax Submissions</p>
+                                                        <h3 class="mb-0 fs-22 text-dark me-3">5</h3>
                                                     </div>
                                                 </div>
                                                 <div class="d-flex align-items-center mt-3 justify-content-between">
-                                                    <p class="mb-0 text-dark mt-1 fs-14 fw-medium">Clients added this month</p>
+                                                    <p class="mb-0 text-dark mt-1 fs-14 fw-medium">Submissions this month</p>
                                                     <p class="text-muted mb-0 fs-13 d-flex flex-column">
-                                                        <span class="text-success px-2 py-1 bg-success-subtle rounded-4 me-2">+3.2%</span>
+                                                        <span class="text-success px-2 py-1 bg-success-subtle rounded-4 me-2">+12.3%</span>
                                                     </p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                    
-                                <!-- Widget 2: Tasks Due This Week -->
+                        
+                                <!-- Widget 2: Pending Tax Reviews -->
                                 <div class="col-md-6 col-xl-3">
                                     <div class="card overflow-hidden">
                                         <div class="card-body">
                                             <div class="widget-first">
                                                 <div class="d-flex align-items-center mb-1">
                                                     <span class="avatar-md rounded-circle bg-gray d-flex justify-content-center align-items-center me-3">
-                                                        <!-- Swapped SVG (was 4th) -->
+                                                        <!-- Swapped SVG (for tax reviews) -->
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24">
                                                             <path fill="#963b68" fill-rule="evenodd" d="M3 10.417c0-3.198 0-4.797.378-5.335c.377-.537 1.88-1.052 4.887-2.081l.573-.196C10.405 2.268 11.188 2 12 2s1.595.268 3.162.805l.573.196c3.007 1.029 4.51 1.544 4.887 2.081C21 5.62 21 7.22 21 10.417v1.574c0 5.638-4.239 8.375-6.899 9.536C13.38 21.842 13.02 22 12 22s-1.38-.158-2.101-.473C7.239 20.365 3 17.63 3 11.991zM14 9a2 2 0 1 1-4 0a2 2 0 0 1 4 0m-2 8c4 0 4-.895 4-2s-1.79-2-4-2s-4 .895-4 2s0 2 4 2" clip-rule="evenodd" />
                                                         </svg>
                                                     </span>
                                                     <div>
-                                                        <p class="mb-2 text-dark fs-15 fw-medium">Tasks Due This Week</p>
-                                                        <h3 class="mb-0 fs-22 text-dark me-3">87</h3>
+                                                        <p class="mb-2 text-dark fs-15 fw-medium">Pending Tax Reviews</p>
+                                                        <h3 class="mb-0 fs-22 text-dark me-3">3</h3>
                                                     </div>
                                                 </div>
                                                 <div class="d-flex align-items-center mt-3 justify-content-between">
-                                                    <p class="mb-0 text-dark mt-1">Tasks Completed</p>
+                                                    <p class="mb-0 text-dark mt-1">Reviews Pending</p>
                                                     <p class="text-muted mb-0 fs-13 d-flex flex-column">
-                                                        <span class="text-success px-2 py-1 bg-success-subtle rounded-4 me-2">+45%</span>
+                                                        <span class="text-warning px-2 py-1 bg-warning-subtle rounded-4 me-2">+5.8%</span>
                                                     </p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                    
-                                <!-- Widget 3: Upcoming Deadlines -->
+                        
+                                <!-- Widget 3: Upcoming Tax Deadlines -->
                                 <div class="col-md-6 col-xl-3">
                                     <div class="card overflow-hidden">
                                         <div class="card-body">
                                             <div class="widget-first">
                                                 <div class="d-flex align-items-center mb-1">
                                                     <span class="avatar-md rounded-circle bg-gray d-flex justify-content-center align-items-center me-3">
-                                                        <!-- Swapped SVG (was 3rd) -->
+                                                        <!-- Swapped SVG (for tax deadlines) -->
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24">
                                                             <path fill="#E77636" d="M9.5 2A1.5 1.5 0 0 0 8 3.5v1A1.5 1.5 0 0 0 9.5 6h5A1.5 1.5 0 0 0 16 4.5v-1A1.5 1.5 0 0 0 14.5 2z" />
                                                             <path fill="#E77636" fill-rule="evenodd" d="M6.5 4.037c-1.258.07-2.052.27-2.621.84C3 5.756 3 7.17 3 9.998v6c0 2.829 0 4.243.879 5.122c.878.878 2.293.878 5.121.878h6c2.828 0 4.243 0 5.121-.878c.879-.88.879-2.293.879-5.122v-6c0-2.828 0-4.242-.879-5.121c-.569-.57-1.363-.77-2.621-.84V4.5a3 3 0 0 1-3 3h-5a3 3 0 0 1-3-3zm9.012 8.511a.75.75 0 1 0-1.024-1.096l-3.774 3.522l-1.202-1.122a.75.75 0 0 0-1.024 1.096l1.715 1.6a.75.75 0 0 0 1.023 0z" clip-rule="evenodd" />
@@ -395,51 +389,52 @@
                                                     </span>
                                                     <div>
                                                         <p class="mb-2 text-dark fs-15 fw-medium">Upcoming Deadlines</p>
-                                                        <h3 class="mb-0 fs-22 text-dark me-3">58</h3>
+                                                        <h3 class="mb-0 fs-22 text-dark me-3">2</h3>
                                                     </div>
                                                 </div>
                                                 <div class="d-flex align-items-center mt-3 justify-content-between">
                                                     <p class="mb-0 text-dark mt-1">This Month</p>
                                                     <p class="text-muted mb-0 fs-13 d-flex flex-column">
-                                                        <span class="text-danger px-2 py-1 bg-danger-subtle rounded-4 me-2">-2.1%</span>
+                                                        <span class="text-danger px-2 py-1 bg-danger-subtle rounded-4 me-2">-3.5%</span>
                                                     </p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                    
-                                <!-- Widget 4: Filed Returns -->
+                        
+                                <!-- Widget 4: Tax Filing Status -->
                                 <div class="col-md-6 col-xl-3">
                                     <div class="card overflow-hidden">
                                         <div class="card-body">
                                             <div class="widget-first">
                                                 <div class="d-flex align-items-center mb-1">
                                                     <span class="avatar-md rounded-circle bg-gray d-flex justify-content-center align-items-center me-3">
-                                                        <!-- Swapped SVG (was 1st) -->
+                                                        <!-- Swapped SVG (for tax filing status) -->
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24">
                                                             <path fill="#108dff" fill-rule="evenodd" d="M2.545 8.73C2 9.8 2 11.2 2 14s0 4.2.545 5.27a5 5 0 0 0 2.185 2.185C5.8 22 7.2 22 10 22h4c2.8 0 4.2 0 5.27-.545a5 5 0 0 0 2.185-2.185C22 18.2 22 16.8 22 14s0-4.2-.545-5.27a5 5 0 0 0-2.185-2.185C18.2 6 16.8 6 14 6h-4c-2.8 0-4.2 0-5.27.545A5 5 0 0 0 2.545 8.73M15.06 12.5a.75.75 0 0 0-1.12-1l-3.011 3.374l-.87-.974a.75.75 0 0 0-1.118 1l1.428 1.6a.75.75 0 0 0 1.119 0z" clip-rule="evenodd" />
                                                             <path fill="#108dff" d="M12 2c4.713 0 7.07 0 8.535 1.464c.757.758 1.123 1.754 1.3 3.192V10H2.164V6.656c.176-1.438.541-2.434 1.299-3.192C4.928 2 7.285 2 11.999 2" opacity="0.5" />
                                                         </svg>
                                                     </span>
                                                     <div>
-                                                        <p class="mb-2 text-dark fs-15 fw-medium">Returns Filed</p>
-                                                        <h3 class="mb-0 fs-22 text-dark me-3">2,318</h3>
+                                                        <p class="mb-2 text-dark fs-15 fw-medium">Tax Filing Status</p>
+                                                        <h3 class="mb-0 fs-22 text-dark me-3">Completed</h3>
                                                     </div>
                                                 </div>
                                                 <div class="d-flex align-items-center mt-3 justify-content-between">
-                                                    <p class="mb-0 text-dark mt-1">Filed this month</p>
+                                                    <p class="mb-0 text-dark mt-1">Filed this year</p>
                                                     <p class="text-muted mb-0 fs-13 d-flex flex-column">
-                                                        <span class="text-success px-2 py-1 bg-success-subtle rounded-4 me-2">+8.4%</span>
+                                                        <span class="text-success px-2 py-1 bg-success-subtle rounded-4 me-2">+100%</span>
                                                     </p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                    
+                        
                             </div>
                         </div>
+                        
                     </div>
                     
                     <!-- End Start -->
@@ -450,7 +445,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="d-flex align-items-center">
-                                        <h5 class="card-title mb-0">Task Overview</h5>
+                                        <h5 class="card-title mb-0">Tax Overview</h5>
                                     </div>
                                 </div>
 
@@ -463,7 +458,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="d-flex align-items-center">
-                                        <h5 class="card-title mb-0">Tax Filing Tasks & Deadlines</h5>
+                                        <h5 class="card-title mb-0">Your Tax Filing Tasks & Deadlines</h5>
                                     </div>
                                 </div>
                         
@@ -478,7 +473,7 @@
                                                 <div class="flex-fill w-100">
                                                     <div class="d-flex align-items-start justify-content-between gap-1">
                                                         <div>
-                                                            <h6 class="d-block fw-medium mb-1 text-dark fs-15">Prepare tax filings for Client A</h6>
+                                                            <h6 class="d-block fw-medium mb-1 text-dark fs-15">Prepare your tax filings for the year</h6>
                                                             <p class="text-muted mb-0 fs-13">November 29, 2024</p>
                                                         </div>
                                                         <a href="tax&deadlines.html" class="btn btn-light btn-sm border">View</a>
@@ -495,7 +490,7 @@
                                                 <div class="flex-fill w-100">
                                                     <div class="d-flex align-items-start justify-content-between gap-1">
                                                         <div>
-                                                            <h6 class="d-block fw-medium mb-1 text-dark fs-15">File quarterly tax returns</h6>
+                                                            <h6 class="d-block fw-medium mb-1 text-dark fs-15">File your quarterly tax returns</h6>
                                                             <p class="text-muted mb-0 fs-13">November 28, 2024</p>
                                                         </div>
                                                         <a href="tax&deadlines.html" class="btn btn-light btn-sm border">View</a>
@@ -512,7 +507,7 @@
                                                 <div class="flex-fill w-100">
                                                     <div class="d-flex align-items-start justify-content-between gap-1">
                                                         <div>
-                                                            <h6 class="d-block fw-medium mb-1 text-dark fs-15">Send reminders for tax payments</h6>
+                                                            <h6 class="d-block fw-medium mb-1 text-dark fs-15">Send reminders for upcoming tax payments</h6>
                                                             <p class="text-muted mb-0 fs-13">December 1, 2024</p>
                                                         </div>
                                                         <a href="tax&deadlines.html" class="btn btn-light btn-sm border">View</a>
@@ -529,7 +524,7 @@
                                                 <div class="flex-fill w-100">
                                                     <div class="d-flex align-items-start justify-content-between gap-1">
                                                         <div>
-                                                            <h6 class="d-block fw-medium mb-1 text-dark fs-15">Review Client B's tax deductions</h6>
+                                                            <h6 class="d-block fw-medium mb-1 text-dark fs-15">Review your tax deductions</h6>
                                                             <p class="text-muted mb-0 fs-13">December 5, 2024</p>
                                                         </div>
                                                         <a href="tax&deadlines.html" class="btn btn-light btn-sm border">View</a>
@@ -546,7 +541,7 @@
                                                 <div class="flex-fill w-100">
                                                     <div class="d-flex align-items-start justify-content-between gap-1">
                                                         <div>
-                                                            <h6 class="d-block fw-medium mb-1 text-dark fs-15">Update tax return forms for new clients</h6>
+                                                            <h6 class="d-block fw-medium mb-1 text-dark fs-15">Update tax return forms for new filings</h6>
                                                             <p class="text-muted mb-0 fs-13">December 6, 2024</p>
                                                         </div>
                                                         <a href="tax&deadlines.html" class="btn btn-light btn-sm border">View</a>
@@ -563,7 +558,7 @@
                                                 <div class="flex-fill w-100">
                                                     <div class="d-flex align-items-start justify-content-between gap-1">
                                                         <div>
-                                                            <h6 class="d-block fw-medium mb-1 text-dark fs-15">Review tax exemptions for Client C</h6>
+                                                            <h6 class="d-block fw-medium mb-1 text-dark fs-15">Review your tax exemptions</h6>
                                                             <p class="text-muted mb-0 fs-13">December 8, 2024</p>
                                                         </div>
                                                         <a href="tax&deadlines.html" class="btn btn-light btn-sm border">View</a>
@@ -576,6 +571,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                         
                     </div>
                     <!-- End Project Statistics -->
@@ -680,7 +676,7 @@
 
                                 <div class="card-header">
                                     <div class="d-flex align-items-center">
-                                        <h5 class="card-title mb-0">Clients Performance</h5>
+                                        <h5 class="card-title mb-0">My Performance</h5>
                                     </div>
                                 </div>
 
